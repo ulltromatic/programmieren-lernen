@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnToCode | Lerne 5 Programmiersprachen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">🚀 LearnToCode</div>
+        <nav>
+            <button class="nav-btn active" onclick="changeLanguage('html')">HTML / CSS</button>
+            <button class="nav-btn" onclick="changeLanguage('javascript')">JavaScript</button>
+            <button class="nav-btn" onclick="changeLanguage('python')">Python</button>
+            <button class="nav-btn" onclick="changeLanguage('java')">Java</button>
+            <button class="nav-btn" onclick="changeLanguage('cpp')">C++</button>
+        </nav>
+    </header>
+
+    <!-- Hauptbereich -->
+    <main class="container">
+        <section class="info-box">
+            <h1 id="lang-title">HTML & CSS lernen</h1>
+            <p id="lang-desc">HTML ist das Skelett jeder Website, CSS sorgt für das Aussehen. Schreibe deinen ersten Code im Editor rechts und klicke auf 'Ausführen'!</p>
+            
+            <div class="tipp-box">
+                <strong>💡 Aufgabe:</strong> Ändere den Text im Editor zwischen den &lt;h1&gt;-Tags in deinen eigenen Namen und schaue, was passiert!
+            </div>
+        </section>
+
+        <!-- Der interaktive Code-Editorbereich -->
+        <section class="editor-box">
+            <iframe id="code-compiler" src="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" title="Code Editor"></iframe>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
