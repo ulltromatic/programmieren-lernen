@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeCraft | Lerne 5 Programmiersprachen</title>
+    <title>CodeCraft | Interaktive Code-Plattform</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Monaco Editor Code-Style -->
+    <link rel="stylesheet" data-name="vs/editor/default/nodes/node_modules/monaco-editor/min/vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/editor/editor.main.min.css">
 </head>
 <body>
 
-    <!-- Navigation -->
     <header>
         <div class="logo">🚀 CodeCraft.de</div>
         <nav>
             <button class="nav-btn active" onclick="changeLanguage('html')">HTML / CSS</button>
             <button class="nav-btn" onclick="changeLanguage('javascript')">JavaScript</button>
             <button class="nav-btn" onclick="changeLanguage('python')">Python</button>
-            <button class="nav-btn" onclick="changeLanguage('java')">Java</button>
-            <button class="nav-btn" onclick="changeLanguage('cpp')">C++</button>
         </nav>
+        <button class="run-btn" onclick="runCode()">⚡ Code ausführen</button>
     </header>
 
-    <!-- Hauptbereich -->
     <main class="container">
+        <!-- Linke Seite: Aufgabenstellung -->
         <section class="info-box">
             <h1 id="lang-title">HTML & CSS lernen</h1>
-            <p id="lang-desc">HTML ist das Skelett jeder Website, CSS sorgt für das Aussehen. Schreibe deinen ersten Code im Editor rechts und klicke auf 'Ausführen'!</p>
-            
-            <div class="tipp-box">
-                <strong>💡 Aufgabe:</strong> Ändere den Text im Editor zwischen den &lt;h1&gt;-Tags in deinen eigenen Namen und schaue, was passiert!
+            <p id="lang-desc">Schreibe echten Code im Editor und erwecke deine Seite zum Leben!</p>
+            <div class="tipp-box" id="lang-task">
+                💡 <b>Aufgabe:</b> Ändere den Text in der h1-Überschrift.
             </div>
         </section>
 
-        <!-- Der interaktive Code-Editorbereich -->
-        <section class="editor-box">
-            <iframe id="code-compiler" src="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" title="Code Editor"></iframe>
+        <!-- Rechte Seite: Editor & Live-Ausgabe -->
+        <section class="workspace">
+            <div id="editor-container"></div>
+            <div class="output-container">
+                <div class="output-header">💻 Ausgabe / Ergebnis</div>
+                <iframe id="preview-frame" style="display: block;"></iframe>
+                <div id="console-output" style="display: none;">Klicke auf "Code ausführen"...</div>
+            </div>
         </section>
     </main>
 
+    <!-- Monaco Editor Scripte -->
+    <script>var require = { paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs' } };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/loader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/editor/editor.main.nls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/editor/editor.main.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
